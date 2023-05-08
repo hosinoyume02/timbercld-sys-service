@@ -46,7 +46,7 @@ timbercld-sys-service
 │
 ├─timbercld-starter  框架启动器
 │    ├─TimbercldAppStarter 启动入口
-│    ├─demo 系统权限
+│    ├─demo 开发示例
 └─resources
 │        ├─mapper   MyBatis文件
 │        └─application.yml   全局配置文件
