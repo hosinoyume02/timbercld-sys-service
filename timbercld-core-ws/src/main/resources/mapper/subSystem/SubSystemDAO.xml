@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.timbercld.ws.subsys.dao.SubSystemDAO">
+    <select id="getSubSystemId" resultType="com.timbercld.ws.subsys.entity.SubSystemEntity">
+        select * from sub_system where del_flag = 0 and sub_system_id = #{value} limit 1
+    </select>
+    <select id="getList" resultType="com.timbercld.ws.subsys.entity.SubSystemEntity">
+        select t1.*,t2.real_name,t2.email,t2.mobile from sub_system t1, system_user t2
+            where t1.user_id = t2.id and t1.del_flag = 0 and t1.sub_system = 0
+        <if test="subSystemName != null and subSystemName.trim() != ''">
+            and t1.sub_system_name like #{subSystemName}
+        </if>
+    </select>
+    <select id="getById" resultType="com.timbercld.ws.subsys.entity.SubSystemEntity">
+        select t2.real_name,t2.email,t2.mobile ,t1.*from sub_system t1, system_user t2
+            where t1.user_id = t2.id and t1.del_flag = 0 and t1.id = #{value}
+    </select>
+    <update id="deleteBatch">
+        update sub_system set del_flag = 1 where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

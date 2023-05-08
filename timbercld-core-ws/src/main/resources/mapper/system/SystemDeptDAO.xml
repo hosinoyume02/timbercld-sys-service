@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.timbercld.ws.system.dao.SystemDeptDAO">
+	<select id="getList" resultType="com.timbercld.ws.system.entity.SystemDeptEntity">
+		select t1.*,(select t2.name from system_dept t2 where t2.id=t1.pid)parentName from system_dept t1
+			where t1.sub_system_id = #{sub_system_id}
+		<if test="deptIdList != null">
+			and t1.id in
+			<foreach item="id" collection="deptIdList" open="(" separator="," close=")">
+				#{id}
+			</foreach>
+		</if>
+		order by t1.order asc
+	</select>
+	<select id="getSubDeptIdList" resultType="long">
+		select id from system_dept where pids like #{id}
+	</select>
+	<select id="getIdAndPidList" resultType="com.timbercld.ws.system.entity.SystemDeptEntity">
+		select t1.id, t1.pid from system_dept t1
+	</select>
+	<select id="getById" resultType="com.timbercld.ws.system.entity.SystemDeptEntity">
+		select t1.*,(select t2.name from system_dept t2 where t2.id=t1.pid) parentName from system_dept t1
+		where t1.id = #{value}
+	</select>
+</mapper>

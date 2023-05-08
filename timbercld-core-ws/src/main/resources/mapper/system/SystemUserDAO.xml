@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.timbercld.ws.system.dao.SystemUserDAO">
+
+	<select id="getById" resultType="com.timbercld.ws.system.entity.SystemUserEntity">
+		select t1.*, (select t2.name from system_dept t2 where t2.id=t1.dept_id) deptName from system_user t1
+			where t1.id = #{value}
+	</select>
+	<select id="getList" resultType="com.timbercld.ws.system.entity.SystemUserEntity">
+		select  (select t2.name from system_dept t2 where t2.id=t1.dept_id) deptName ,t1.*from system_user t1
+		where t1.super_admin = 0 and t1.super_sub_system = 0 and t1.sub_system_id = #{sub_system_id}
+		<if test="username != null and username.trim() != ''">
+			and t1.username like #{username}
+		</if>
+		<if test="deptIdList != null">
+			and t1.dept_id in
+			<foreach item="id" collection="deptIdList" open="(" separator="," close=")">
+				#{id}
+			</foreach>
+		</if>
+	</select>
+	<select id="getCountByDeptId" resultType="int">
+		select count(1) from system_user where dept_id = #{value}
+	</select>
+	<select id="getByUsername" resultType="com.timbercld.ws.system.entity.SystemUserEntity">
+		select * from system_user where username = #{value} limit 0,1
+	</select>
+	<update id="updatePassword">
+		update system_user set password = #{newPassword} where id = #{id}
+	</update>
+</mapper>

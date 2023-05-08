@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.timbercld.ws.system.dao.SystemRoleDataScopeDAO">
+    <select id="getDataScopeList" resultType="long">
+        select t1.dept_id from system_role_user t2 left join system_role_data_scope t1
+          on t2.role_id = t1.role_id where t2.user_id = #{userId} and t1.dept_id is not null
+    </select>
+    <select id="getDeptIdList" resultType="long">
+        select dept_id from system_role_data_scope where role_id = #{roleId} and dept_id is not null
+    </select>
+    <delete id="deleteByRoleIds">
+        delete from system_role_data_scope where role_id in
+        <foreach item="roleId" collection="array" open="(" separator="," close=")">
+            #{roleId}
+        </foreach>
+    </delete>
+</mapper>

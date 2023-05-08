@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.timbercld.ws.system.dao.SystemParamsDAO">
+    <update id="updateValueByCode">
+        update system_params set param_value = #{paramValue} where param_code = #{paramCode}
+    </update>
+	<select id="getValueByCode" resultType="String">
+        select param_value from system_params where param_code = #{value}
+    </select>
+    <select id="getParamCodeList" resultType="String">
+        select param_code from system_params where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+</mapper>
