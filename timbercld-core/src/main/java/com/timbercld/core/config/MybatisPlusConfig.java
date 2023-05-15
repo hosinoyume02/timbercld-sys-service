@@ -37,17 +37,6 @@ import org.springframework.core.annotation.Order;
 @Configuration
 public class MybatisPlusConfig {
 
-    /**
-     * 配置数据权限
-     */
-    @Bean
-    @Order(1)
-    public DataFilterInterceptor dataFilterInterceptor() {
-        return new DataFilterInterceptor();
-    }
-
-
-
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
@@ -62,8 +51,7 @@ public class MybatisPlusConfig {
         //paginationInnerInterceptor.setOverflow(false);
         // 设置最大单页限制数量，默认 500 条，-1 不受限制
         //paginationInnerInterceptor.setMaxLimit(500L);
-
-
+        interceptor.addInnerInterceptor(new DataFilterInterceptor());
         return interceptor;
     }
 
