@@ -19,6 +19,9 @@
 				#{id}
 			</foreach>
 		</if>
+		<if test="userId != null">
+			and t1.id != #{userId}
+		</if>
 	</select>
 	<select id="getCountByDeptId" resultType="int">
 		select count(1) from system_user where dept_id = #{value}
