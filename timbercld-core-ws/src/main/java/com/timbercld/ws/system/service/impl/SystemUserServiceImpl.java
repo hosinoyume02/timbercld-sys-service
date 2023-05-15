@@ -87,6 +87,7 @@ public class SystemUserServiceImpl extends BasicServiceImpl<SystemUserDAO, Syste
 		if(user.getSuperAdmin() == SuperAdminEnum.NO.value()
 				&& user.getSuperSubSystem() == SuperSubSystemEnum.NO.value()) {
 			params.put("deptIdList", systemDeptService.getSubDeptIdList(user.getDeptId()));
+			params.put("userId",AuthorityUtils.getUserId());
 		}
 
 		//子系统
