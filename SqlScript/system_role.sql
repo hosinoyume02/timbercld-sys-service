@@ -1,0 +1,2 @@
+INSERT INTO `system_role` (`id`, `name`, `comment`, `dept_id`, `sub_system_id`, `creator_id`, `create_date`, `updater_id`, `update_date`) VALUES (1125415693534105602, '默认租户角色', '123', NULL, NULL, 1067246875800000001, '2019-10-21 15:59:50', 1650311204460670978, '2023-05-15 13:52:17');
+INSERT INTO `system_role` (`id`, `name`, `comment`, `dept_id`, `sub_system_id`, `creator_id`, `create_date`, `updater_id`, `update_date`) VALUES (1657933874324881409, '系统管理员', '', NULL, 1001, 1067246875800000001, '2023-05-15 10:20:13', 1067246875800000001, '2023-05-15 10:20:13');

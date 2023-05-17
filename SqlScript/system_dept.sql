@@ -1,0 +1,2 @@
+INSERT INTO `system_dept` (`id`, `pid`, `pids`, `name`, `order`, `sub_system_id`, `creator_id`, `create_date`, `updater_id`, `update_date`) VALUES (1650310269189599233, 0, '0', '木链云科技有限公司', 0, 1001, 1067246875800000001, '2023-04-24 09:26:44', NULL, NULL);
+INSERT INTO `system_dept` (`id`, `pid`, `pids`, `name`, `order`, `sub_system_id`, `creator_id`, `create_date`, `updater_id`, `update_date`) VALUES (1657934229070725121, 1650310269189599233, '1650310269189599233', '研发部', 0, 1001, 1650311204460670978, '2023-05-15 10:21:37', 1650311204460670978, '2023-05-15 10:21:37');
