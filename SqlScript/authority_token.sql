@@ -1,4 +1,36 @@
-INSERT INTO `authority_token` (`id`, `user_id`, `token`, `expire_date`, `update_date`, `create_date`) VALUES (1655513439771602945, 1067246875800000001, '400826e82cb6656737fab65d40d13700', '2023-06-16 14:20:29', '2023-05-17 14:20:29', '2023-05-08 18:02:16');
-INSERT INTO `authority_token` (`id`, `user_id`, `token`, `expire_date`, `update_date`, `create_date`) VALUES (1656203852656451586, 1656183245533446145, '40f45c6c06115b0d778569062a01c8b2', '2023-06-14 09:59:23', '2023-05-15 09:59:23', '2023-05-10 15:45:43');
-INSERT INTO `authority_token` (`id`, `user_id`, `token`, `expire_date`, `update_date`, `create_date`) VALUES (1656204029131792386, 1650311204460670978, '273e212eb33a43788d2c2cb8de86ed47', '2023-06-16 14:05:39', '2023-05-17 14:05:39', '2023-05-10 15:46:25');
-INSERT INTO `authority_token` (`id`, `user_id`, `token`, `expire_date`, `update_date`, `create_date`) VALUES (1657936141971144706, 1657934522789445633, 'e50fe1284ed59d201db53e05d97ad1d0', '2023-06-14 10:29:13', '2023-05-15 10:29:13', '2023-05-15 10:29:13');
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : 101.201.153.140_3306
+ Source Server Type    : MySQL
+ Source Server Version : 100306
+ Source Host           : 101.201.153.140:3306
+ Source Schema         : timbercld_sys_service
+
+ Target Server Type    : MySQL
+ Target Server Version : 100306
+ File Encoding         : 65001
+
+ Date: 18/05/2023 22:55:53
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for authority_token
+-- ----------------------------
+DROP TABLE IF EXISTS `authority_token`;
+CREATE TABLE `authority_token`  (
+  `id` bigint NOT NULL COMMENT 'id',
+  `user_id` bigint NOT NULL COMMENT '用户id',
+  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '用户token',
+  `expire_date` datetime NULL DEFAULT NULL COMMENT '过期时间',
+  `update_date` datetime NULL DEFAULT NULL COMMENT '更新时间',
+  `create_date` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `uk_user_id`(`user_id`) USING BTREE,
+  UNIQUE INDEX `uk_token`(`token`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统用户Token' ROW_FORMAT = DYNAMIC;
+
+SET FOREIGN_KEY_CHECKS = 1;
