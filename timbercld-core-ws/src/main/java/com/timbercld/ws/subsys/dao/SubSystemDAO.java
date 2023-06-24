@@ -28,18 +28,35 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 子系统管理
- *
+ * subSystem
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SubSystemDAO extends BasicDao<SubSystemEntity> {
 
+    /**
+     * list subSystem
+     * @param params
+     * @return list
+     */
     List<SubSystemEntity> getList(Map<String, Object> params);
-
+    /**
+     * get subSystem by id
+     * @param id
+     * @return subSystemEntity
+     */
     SubSystemEntity getById(Long id);
 
+    /**
+     * get subSystem
+     * @param subSystemId
+     * @return subSystemEntity
+     */
     SubSystemEntity getSubSystemId(Long subSystemId);
-
+    /**
+     * batch delete subSystem
+     * @param ids
+     */
     void deleteBatch(Long[] ids);
 }

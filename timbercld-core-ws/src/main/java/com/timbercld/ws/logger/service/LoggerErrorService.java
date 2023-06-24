@@ -31,14 +31,24 @@ import java.util.Map;
 
 /**
  * 异常日志
- *
+ * @author timberbackend
  * 
  * @since 1.0.0
  */
 public interface LoggerErrorService extends BasicService<LoggerErrorEntity> {
 
+    /**
+     * page list error logger
+     * @param params
+     * @return PageData
+     */
     PageData<LoggerErrorDTO> page(Map<String, Object> params);
 
+    /**
+     * list error logger
+     * @param params
+     * @return List
+     */
     List<LoggerErrorDTO> list(Map<String, Object> params);
 
 

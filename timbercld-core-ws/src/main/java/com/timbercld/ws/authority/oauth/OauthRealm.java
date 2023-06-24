@@ -68,7 +68,7 @@ public class OauthRealm extends AuthorizingRealm {
 
         TokenEntity tokenEntity = permissionService.getByToken(accessToken);
         //token失效
-        if(null == tokenEntity || tokenEntity.getExpireDate().getTime() < new Date().getTime()){
+        if(null == tokenEntity || tokenEntity.getExpireDate().getTime() < System.currentTimeMillis()){
             throw new IncorrectCredentialsException(MessageUtils.getMessage(ErrorCode.TOKEN_INVALID));
         }
 

@@ -32,21 +32,42 @@ import java.util.Map;
 
 /**
  * 角色
- * 
+ * @author timberbackend
  * 
  */
 public interface SystemRoleService extends BasicService<SystemRoleEntity> {
-
+	/**
+	 * page list system role
+	 * @param params
+	 * @return pageData
+	 */
 	PageData<SystemRoleDTO> page(Map<String, Object> params);
-
+	/**
+	 * list system role
+	 * @param params
+	 * @return list
+	 */
 	List<SystemRoleDTO> list(Map<String, Object> params);
-
+	/**
+	 * get system role dto
+	 * @param id
+	 * @return systemRoleDTO
+	 */
 	SystemRoleDTO get(Long id);
-
+	/**
+	 * save system role dto
+	 * @param dto
+	 */
 	void save(SystemRoleDTO dto);
-
+	/**
+	 * update system role dto
+	 * @param dto
+	 */
 	void update(SystemRoleDTO dto);
-
+	/**
+	 * batch delete system role dto
+	 * @param ids
+	 */
 	void delete(Long[] ids);
 
 }

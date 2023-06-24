@@ -22,11 +22,17 @@ package com.timbercld.ws.system.enums;
 
 /**
  * 系统子系统枚举
- *
+ * @author timberbackend
  * 
  */
 public enum SubSystemEnum {
+    /**
+     * 是
+     */
     YES(1),
+    /**
+     * 否
+     */
     NO(0);
 
     private int value;

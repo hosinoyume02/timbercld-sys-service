@@ -22,7 +22,13 @@ package com.timbercld.ws.system.enums;
 
 
 public enum UserStatusEnum {
+    /**
+     * 不可用
+     */
     DISABLE(0),
+    /**
+     * 可用
+     */
     ENABLED(1);
 
     private int value;

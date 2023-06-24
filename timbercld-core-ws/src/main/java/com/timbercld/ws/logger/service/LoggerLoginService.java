@@ -30,14 +30,24 @@ import java.util.Map;
 
 /**
  * 登录日志
- *
+ * @author timberbackend
  *
  * @since 1.0.0
  */
 public interface LoggerLoginService extends BasicService<LoggerLoginEntity> {
 
+    /**
+     * page list login logger
+     * @param params
+     * @return PageData
+     */
     PageData<LoggerLoginDTO> page(Map<String, Object> params);
 
+    /**
+     * list login logger
+     * @param params
+     * @return List
+     */
     List<LoggerLoginDTO> list(Map<String, Object> params);
 
 }

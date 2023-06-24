@@ -121,7 +121,7 @@ public class ProductController {
             return new Result<Map<String, Object>>().error(ErrorCode.UPLOAD_FILE_EMPTY);
         }
 
-        if (fileName.isEmpty() || fileName.equals("")) {
+        if (fileName.isEmpty()) {
             uploadName = file.getOriginalFilename();
         }else {
             //上传文件

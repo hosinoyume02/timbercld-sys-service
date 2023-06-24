@@ -29,12 +29,22 @@ import java.util.Map;
 
 /**
  * 定时任务日志
- *
+ * @author timberbackend
  *
  */
 public interface SchedulerLogService extends BasicService<SchedulerLogEntity> {
 
+	/**
+	 * page list scheduler logger
+	 * @param params
+	 * @return PageData
+	 */
 	PageData<SchedulerLogDTO> page(Map<String, Object> params);
 
+	/**
+	 * get scheduler logger
+	 * @param id
+	 * @return schedulerLogDTO
+	 */
 	SchedulerLogDTO get(Long id);
 }

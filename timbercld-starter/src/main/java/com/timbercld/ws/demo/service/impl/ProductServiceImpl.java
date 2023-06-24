@@ -35,12 +35,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-/**
- * 操作日志
- *
- *
- * @since 1.0.0
- */
+
 @Service
 public class ProductServiceImpl extends BasicServiceImpl<ProductDAO, ProductEntity> implements ProductService {
 

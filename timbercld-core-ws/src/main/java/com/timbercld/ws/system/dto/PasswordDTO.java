@@ -30,9 +30,8 @@ import java.io.Serializable;
 
 /**
  * 修改密码
+ * @author timberbackend
  *
- *
- * @since 1.0.0
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

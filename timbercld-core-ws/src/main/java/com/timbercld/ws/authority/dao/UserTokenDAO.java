@@ -27,15 +27,28 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 系统用户Token
- * 
+ * @author timberbackend
  * 
  */
 @Mapper
 public interface UserTokenDAO extends BasicDao<TokenEntity> {
 
+    /**
+     * get entity by token
+     * @param token
+     * @return tokenEntity
+     */
     TokenEntity getByToken(String token);
-
+    /**
+     * get entity by token
+     * @param userId
+     * @return tokenEntity
+     */
     TokenEntity getByUserId(Long userId);
-
+    /**
+     * update token by userId
+     * @param  userId
+     * @param token
+     */
     void updateToken(@Param("userId") Long userId, @Param("token") String token);
 }

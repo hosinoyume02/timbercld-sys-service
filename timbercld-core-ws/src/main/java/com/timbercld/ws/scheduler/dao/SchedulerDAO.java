@@ -28,14 +28,16 @@ import java.util.Map;
 
 /**
  * 定时任务
- *
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SchedulerDAO extends BasicDao<SchedulerEntity> {
 	
 	/**
-	 * 批量更新状态
+	 * batch update scheduler
+	 * @param map
+	 * @return int
 	 */
 	int updateBatch(Map<String, Object> map);
 }

@@ -39,7 +39,7 @@ import java.util.Date;
  * 参数管理
  *
  * 
- * @since 1.0.0
+ * @author timberbackend
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -27,27 +27,28 @@ import java.util.List;
 
 /**
  * 角色数据权限
+ * @author timberbackend
  *
- * 
- * @since 1.0.0
  */
 public interface SystemRoleDataScopeService extends BasicService<SystemRoleDataScopeEntity> {
 
     /**
-     * 根据角色ID，获取部门ID列表
+     * get department id by role id
+     * @param roleId
+     * @return list
      */
     List<Long> getDeptIdList(Long roleId);
 
     /**
-     * 保存或修改
-     * @param roleId      角色ID
-     * @param deptIdList  部门ID列表
+     * save or update
+     * @param roleId
+     * @param deptIdList
      */
     void saveOrUpdate(Long roleId, List<Long> deptIdList);
 
     /**
-     * 根据角色id，删除角色数据权限关系
-     * @param roleId 角色ids
+     * delete role scope data by role id
+     * @param roleIds
      */
-    void deleteByRoleIds(Long[] roleId);
+    void deleteByRoleIds(Long[] roleIds);
 }

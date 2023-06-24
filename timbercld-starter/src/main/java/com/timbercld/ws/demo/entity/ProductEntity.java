@@ -27,12 +27,6 @@ import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 
-/**
- * 操作日志
- *
- * 
- * @since 1.0.0
- */
 @Data
 @EqualsAndHashCode(callSuper=false)
 @TableName("demo_product")

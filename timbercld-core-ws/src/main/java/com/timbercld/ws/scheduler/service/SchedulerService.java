@@ -30,47 +30,72 @@ import java.util.Map;
 
 /**
  * 定时任务
- *
+ * @author timberbackend
  *
  */
 public interface SchedulerService extends BasicService<SchedulerEntity> {
 
+	/**
+	 * page list scheduler
+	 * @param params
+	 * @return PageData
+	 */
 	PageData<SchedulerDTO> page(Map<String, Object> params);
-
+	/**
+	 * get scheduler
+	 * @param id
+	 * @return schedulerDTO
+	 */
 	SchedulerDTO get(Long id);
+	/**
+	 * get scheduler list
+	 * @param params
+	 * @return list
+	 */
 	List<SchedulerEntity> getList(Map<String,Object> params);
 	/**
-	 * 保存定时任务
+	 * save scheduler
+	 * @param dto
+	 *
 	 */
 	void save(SchedulerDTO dto);
 	
 	/**
-	 * 更新定时任务
+	 * update scheduler
+	 * @param dto
 	 */
 	void update(SchedulerDTO dto);
 	
 	/**
-	 * 批量删除定时任务
+	 * batch delete scheduler
+	 * @param ids
 	 */
 	void deleteBatch(Long[] ids);
 	
 	/**
-	 * 批量更新定时任务状态
+	 * batch update scheduler status
+	 * @param ids
+	 * @param status
+	 * @return int
 	 */
 	int updateBatch(Long[] ids, int status);
 	
 	/**
-	 * 立即执行
+	 * run scheduler
+	 * @param ids
+	 *
 	 */
 	void run(Long[] ids);
 	
 	/**
-	 * 暂停运行
+	 * pause scheduler
+	 * @param ids
 	 */
 	void pause(Long[] ids);
 	
 	/**
-	 * 恢复运行
+	 * resume scheduler
+	 * @param ids
 	 */
 	void resume(Long[] ids);
 }

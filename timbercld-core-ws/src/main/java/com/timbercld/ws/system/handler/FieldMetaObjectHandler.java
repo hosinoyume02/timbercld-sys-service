@@ -20,26 +20,19 @@
 
 package com.timbercld.ws.system.handler;
 
-import com.baomidou.mybatisplus.core.metadata.TableFieldInfo;
-import com.baomidou.mybatisplus.core.metadata.TableInfoHelper;
-import com.baomidou.mybatisplus.core.toolkit.Constants;
-import com.baomidou.mybatisplus.annotation.FieldFill;
+
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.baomidou.mybatisplus.core.metadata.TableInfo;
-import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.timbercld.ws.authority.utils.AuthorityUtils;
-import org.apache.commons.lang3.StringUtils;
+
 import org.apache.ibatis.reflection.MetaObject;
-import org.apache.ibatis.reflection.SystemMetaObject;
+
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * 公共字段，自动填充值
- *
+ * @author timberbackend
  *
  */
 @Component

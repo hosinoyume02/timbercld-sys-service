@@ -29,45 +29,54 @@ import java.util.List;
 
 /**
  * 菜单管理
- * 
+ * @author timerbackend
  * 
  */
 @Mapper
 public interface SystemMenuDAO extends BasicDao<SystemMenuEntity> {
 
+	/**
+	 * get menu by id and language
+	 * @param id
+	 * @param language
+	 * @return systemMenuEntity
+	 */
 	SystemMenuEntity getById(@Param("id") Long id, @Param("language") String language);
 
 	/**
-	 * 查询所有菜单列表
-	 *
-	 * @param type 菜单类型
-	 * @param language 语言
+	 * get menu list
+	 * @param type
+	 * @param language
+	 * @return list
 	 */
 	List<SystemMenuEntity> getMenuList(@Param("type") Integer type, @Param("language") String language);
 
 	/**
-	 * 查询用户菜单列表
-	 *
-	 * @param userId 用户ＩＤ
-	 * @param type 菜单类型
-	 * @param language 语言
+	 * get user menu list
+	 * @param userId
+	 * @param type
+	 * @param language
+	 * @return list
 	 */
 	List<SystemMenuEntity> getUserMenuList(@Param("userId") Long userId, @Param("type") Integer type, @Param("language") String language);
 
 	/**
-	 * 查询用户权限列表
-	 * @param userId  用户ID
+	 * get user permission list
+	 * @param userId
+	 * @return list
 	 */
 	List<String> getUserPermissionsList(Long userId);
 
 	/**
-	 * 查询所有权限列表
+	 * get all permission list
+	 * @return list
 	 */
 	List<String> getPermissionsList();
 
 	/**
-	 * 根据父菜单，查询子菜单
-	 * @param pid  父菜单ID
+	 * get menu list by pid
+	 * @param pid
+	 * @return list
 	 */
 	List<SystemMenuEntity> getListPid(Long pid);
 

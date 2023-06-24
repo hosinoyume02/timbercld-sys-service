@@ -27,8 +27,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 子系统管理
- *
+ * subSystemEntity
+ * @author timberbackend
  *
  */
 @Data

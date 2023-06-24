@@ -27,9 +27,8 @@ import java.util.Date;
 
 /**
  * 用户管理
+ * @author timberbackend
  *
- * 
- * @since 1.0.0
  */
 @Data
 public class SystemUserExcel {

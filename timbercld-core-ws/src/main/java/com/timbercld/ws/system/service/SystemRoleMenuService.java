@@ -28,32 +28,34 @@ import java.util.List;
 
 /**
  * 角色与菜单对应关系
- * 
+ * @author timberbackend
  * 
  */
 public interface SystemRoleMenuService extends BasicService<SystemRoleMenuEntity> {
 
 	/**
-	 * 根据角色ID，获取菜单ID列表
+	 * get menu id by role id
+	 * @param roleId
+	 * @return list
 	 */
 	List<Long> getMenuIdList(Long roleId);
 
 	/**
-	 * 保存或修改
-	 * @param roleId      角色ID
-	 * @param menuIdList  菜单ID列表
+	 * save or update
+	 * @param roleId
+	 * @param menuIdList
 	 */
 	void saveOrUpdate(Long roleId, List<Long> menuIdList);
 
 	/**
-	 * 根据角色id，删除角色菜单关系
+	 * delete role menu by role id
 	 * @param roleIds 角色ids
 	 */
 	void deleteByRoleIds(Long[] roleIds);
 
 	/**
-	 * 根据菜单id，删除角色菜单关系
-	 * @param menuId 菜单id
+	 * delete role menu by menu id
+	 * @param menuId
 	 */
 	void deleteByMenuId(Long menuId);
 }

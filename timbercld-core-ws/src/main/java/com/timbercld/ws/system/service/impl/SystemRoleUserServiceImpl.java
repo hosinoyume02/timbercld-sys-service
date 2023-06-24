@@ -31,9 +31,8 @@ import java.util.List;
 
 /**
  * 角色用户关系
+ * @author timberbackend
  *
- *
- * @since 1.0.0
  */
 @Service
 public class SystemRoleUserServiceImpl extends BasicServiceImpl<SystemRoleUserDAO, SystemRoleUserEntity> implements SystemRoleUserService {

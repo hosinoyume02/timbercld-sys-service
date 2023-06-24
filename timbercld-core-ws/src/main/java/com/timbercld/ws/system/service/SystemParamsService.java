@@ -32,41 +32,63 @@ import java.util.Map;
 /**
  * 参数管理
  *
- *
- * @since 1.0.0
+ * @author timberbackend
  */
 public interface SystemParamsService extends BasicService<SystemParamsEntity> {
-
+    /**
+     * page list for system params
+     * @param params
+     * @return pageData
+     */
     PageData<SystemParamsDTO> page(Map<String, Object> params);
-
+    /**
+     * list for system params
+     * @param params
+     * @return list
+     */
     List<SystemParamsDTO> list(Map<String, Object> params);
-
+    /**
+     * get system params dto
+     * @param id
+     * @return systemParamsDTO
+     */
     SystemParamsDTO get(Long id);
-
+    /**
+     * save system params dto
+     * @param dto
+     */
     void save(SystemParamsDTO dto);
-
+    /**
+     * update system params dto
+     * @param dto
+     */
     void update(SystemParamsDTO dto);
-
+    /**
+     * batch delete system params
+     * @param ids
+     */
     void delete(Long[] ids);
 
     /**
-     * 根据参数编码，获取参数的value值
-     *
-     * @param paramCode  参数编码
+     * get value by param code
+     * @param paramCode
+     * @return string
      */
     String getValue(String paramCode);
 
     /**
-     * 根据参数编码，获取value的Object对象
-     * @param paramCode  参数编码
-     * @param clazz  Object对象
+     * get value object by param code
+     * @param paramCode
+     * @param clazz
+     * @return T
      */
     <T> T getValueObject(String paramCode, Class<T> clazz);
 
     /**
-     * 根据参数编码，更新value
-     * @param paramCode  参数编码
-     * @param paramValue  参数值
+     * update value by param code
+     * @param paramCode
+     * @param paramValue
+     * @return int
      */
     int updateValueByCode(String paramCode, String paramValue);
 }

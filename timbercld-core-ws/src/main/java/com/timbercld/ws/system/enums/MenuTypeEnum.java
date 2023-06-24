@@ -24,7 +24,7 @@ package com.timbercld.ws.system.enums;
  * 菜单类型枚举
  *
  * 
- * @since 1.0.0
+ * @author timberbackend
  */
 public enum MenuTypeEnum {
     /**

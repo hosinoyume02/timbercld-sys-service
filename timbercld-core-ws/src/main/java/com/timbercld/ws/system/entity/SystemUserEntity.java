@@ -28,7 +28,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 系统用户
- * 
+ * @author timberbackend
  *
  */
 @Data

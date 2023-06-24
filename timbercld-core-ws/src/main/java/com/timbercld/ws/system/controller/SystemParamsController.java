@@ -49,9 +49,8 @@ import java.util.Map;
 
 /**
  * 参数管理
+ * @author timberbackend
  *
- * 
- * @since 1.0.0
  */
 @RestController
 @RequestMapping("system/params")

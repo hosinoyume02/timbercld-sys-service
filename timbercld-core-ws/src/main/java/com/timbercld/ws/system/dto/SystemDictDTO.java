@@ -40,7 +40,7 @@ import java.util.Date;
  * 数据字典
  *
  *
- * @since 1.0.0
+ * @author timberbackend
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

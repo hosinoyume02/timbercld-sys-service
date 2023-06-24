@@ -27,20 +27,28 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 国际化
- * 
+ * @author timberbackend
  * 
  */
 @Mapper
 public interface SystemLanguageDAO extends BasicDao<SystemLanguageEntity> {
 
+    /**
+     * get system language
+     * @param entity
+     * @return systemLanguageEntity
+     */
     SystemLanguageEntity getLanguage(SystemLanguageEntity entity);
-
+    /**
+     * update system language
+     * @param entity
+     */
     void updateLanguage(SystemLanguageEntity entity);
 
     /**
-     * 删除国际化
-     * @param tableName   表名
-     * @param tableId     表主键
+     * delete system language
+     * @param tableName
+     * @param tableId
      */
     void deleteLanguage(@Param("tableName") String tableName, @Param("tableId") Long tableId);
 }

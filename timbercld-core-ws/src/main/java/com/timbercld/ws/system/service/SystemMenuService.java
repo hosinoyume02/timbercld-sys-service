@@ -30,37 +30,53 @@ import java.util.List;
 
 /**
  * 菜单管理
- * 
+ * @author timberbackend
  *
  */
 public interface SystemMenuService extends BasicService<SystemMenuEntity> {
 
+	/**
+	 * get system menu
+	 * @param id
+	 * @return systemMenuDTO
+	 */
 	SystemMenuDTO get(Long id);
-
+	/**
+	 * save system menu
+	 * @param dto
+	 */
 	void save(SystemMenuDTO dto);
-
+	/**
+	 * update system menu
+	 * @param dto
+	 */
 	void update(SystemMenuDTO dto);
-
+	/**
+	 * delete system menu
+	 * @param id
+	 */
 	void delete(Long id);
 
 	/**
-	 * 菜单列表
-	 *
-	 * @param type 菜单类型
+	 * get all list by type
+	 * @param type
+	 * @return list
 	 */
 	List<SystemMenuDTO> getAllMenuList(Integer type);
 
 	/**
-	 * 用户菜单列表
+	 * get menu list by user and type
 	 *
-	 * @param user  用户
-	 * @param type 菜单类型
+	 * @param user
+	 * @param type
+	 * @return list
 	 */
 	List<SystemMenuDTO> getUserMenuList(LoginUserDTO user, Integer type);
 
 	/**
-	 * 根据父菜单，查询子菜单
-	 * @param pid  父菜单ID
+	 * get menu by pid
+	 * @param pid
+	 * @return list
 	 */
 	List<SystemMenuDTO> getListPid(Long pid);
 }

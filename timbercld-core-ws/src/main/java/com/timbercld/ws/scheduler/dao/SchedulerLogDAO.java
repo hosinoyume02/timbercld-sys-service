@@ -25,8 +25,8 @@ import com.timbercld.ws.scheduler.entity.SchedulerLogEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 定时任务日志
- *
+ * scheduler logger
+ * @author timberbackend
  *
  */
 @Mapper

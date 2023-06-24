@@ -29,21 +29,42 @@ import java.util.Map;
 
 
 /**
- * 子系统管理
- * 
+ * subSystem
+ * @author timberbackend
  * 
  */
 public interface SubSystemService extends BasicService<SubSystemEntity> {
-
+	/**
+	 * page list sub system
+	 * @param params
+	 * @return PageData
+	 */
 	PageData<SubSystemDTO> page(Map<String, Object> params);
-
+	/**
+	 * get sub system
+	 * @param id
+	 * @return subSystemDTO
+	 */
 	SubSystemDTO get(Long id);
-
+	/**
+	 * save sub system
+	 * @param dto
+	 */
 	void save(SubSystemDTO dto);
-
+	/**
+	 * update sub system
+	 * @param dto
+	 */
 	void update(SubSystemDTO dto);
-
+	/**
+	 * batch delete sub system
+	 * @param ids
+	 */
 	void delete(Long[] ids);
-
+	/**
+	 * get sub system id
+	 * @param subSystemId
+	 * @return subSystemDTO
+	 */
 	SubSystemDTO getSubSystemId(Long subSystemId);
 }

@@ -41,7 +41,7 @@ import java.util.Map;
 
 /**
  * 数据过滤，切面处理类
- *
+ * @author timberbackend
  *
  */
 @Aspect
@@ -76,7 +76,7 @@ public class DataFilterAspect {
     }
 
     /**
-     * dataFilter过滤数据权限
+     * sql filter by user
      */
     private String getSqlFilter(LoginUserDTO user, JoinPoint point) throws Exception {
         MethodSignature signature = (MethodSignature) point.getSignature();

@@ -27,7 +27,7 @@ import java.util.Date;
 
 /**
  * 登录日志
- *
+ * @author timberbackend
  * 
  * @since 1.0.0
  */

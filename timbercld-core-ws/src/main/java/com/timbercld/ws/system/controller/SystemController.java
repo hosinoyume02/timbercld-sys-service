@@ -35,7 +35,7 @@ import java.util.Date;
 
 /**
  * 系统接口
- * 
+ * @author timberbackend
  * 
  */
 @RestController
@@ -52,7 +52,7 @@ public class SystemController {
 		dto.setJavaFreeMemory(Runtime.getRuntime().freeMemory()/1024/1024);
 		dto.setJavaMaxMemory(Runtime.getRuntime().maxMemory()/1024/1024);
 		dto.setUserName(System.getProperty("user.name"));
-		dto.setSysTime(new Date().getTime());
+		dto.setSysTime(System.currentTimeMillis());
 		dto.setOsName(System.getProperty("os.name"));
 		dto.setOsArch(System.getProperty("os.arch"));
 		dto.setSystemCpuLoad(BigDecimal.valueOf(osmx.getSystemCpuLoad()*100).setScale(2, RoundingMode.HALF_UP));

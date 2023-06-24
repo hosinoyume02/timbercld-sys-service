@@ -28,26 +28,28 @@ import java.util.List;
 
 /**
  * 角色与菜单对应关系
- * 
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SystemRoleMenuDAO extends BasicDao<SystemRoleMenuEntity> {
 
 	/**
-	 * 根据角色ID，获取菜单ID列表
+	 * get menu id by role id
+	 * @param roleId
+	 * @return list
 	 */
 	List<Long> getMenuIdList(Long roleId);
 
 	/**
-	 * 根据角色id，删除角色菜单关系
-	 * @param roleIds 角色ids
+	 * delete role menu by role id
+	 * @param roleIds
 	 */
 	void deleteByRoleIds(Long[] roleIds);
 
 	/**
-	 * 根据菜单id，删除角色菜单关系
-	 * @param menuId 菜单id
+	 * delete role menu by menu id
+	 * @param menuId
 	 */
 	void deleteByMenuId(Long menuId);
 }

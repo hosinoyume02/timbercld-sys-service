@@ -30,7 +30,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 系统用户Token
+ * 授权Token
+ * @author timberbackend
  */
 @Data
 @TableName("authority_token")

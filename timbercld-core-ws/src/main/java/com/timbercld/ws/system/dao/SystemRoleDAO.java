@@ -26,14 +26,15 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 角色管理
- * 
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SystemRoleDAO extends BasicDao<SystemRoleEntity> {
 
     /**
-     * 新增子系统角色
+     * insert sub system role
+     * @param entity
      */
     void insertSubSystemRole(SystemRoleEntity entity);
 

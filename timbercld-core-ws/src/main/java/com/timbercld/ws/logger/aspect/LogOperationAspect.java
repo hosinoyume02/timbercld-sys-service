@@ -64,14 +64,14 @@ public class LogOperationAspect {
     }
     @Around("logPointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
-        long beginTime = new Date().getTime();
+        long beginTime = System.currentTimeMillis();
         try {
             Object result = point.proceed();
-            long time = new Date().getTime() - beginTime;
+            long time = System.currentTimeMillis() - beginTime;
             saveLog(point, time, OperationStatusEnum.SUCCESS.value());
             return result;
         }catch(Exception exception) {
-            long time = new Date().getTime() - beginTime;
+            long time = System.currentTimeMillis() - beginTime;
             saveLog(point, time, OperationStatusEnum.FAIL.value());
             throw exception;
         }
@@ -110,7 +110,7 @@ public class LogOperationAspect {
         loggerOperationService.insert(loggerOperationEntity);
     }
     private Object getMethodParameter(Method method, Object[] args) {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(16);
         LocalVariableTableParameterNameDiscoverer parameterNameDiscoverer = new LocalVariableTableParameterNameDiscoverer();
         String[] parameterNames = parameterNameDiscoverer.getParameterNames(method);
         for (int i = 0; i < Objects.requireNonNull(parameterNames).length; i++) {

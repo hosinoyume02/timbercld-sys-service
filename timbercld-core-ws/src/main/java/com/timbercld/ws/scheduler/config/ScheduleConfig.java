@@ -29,7 +29,7 @@ import java.util.Properties;
 
 /**
  * 定时任务配置
- *
+ * @author timberbackend
  * 
  */
 @Configuration

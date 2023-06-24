@@ -36,8 +36,8 @@ import java.util.Date;
 
 
 /**
- * 定时任务
- *
+ * scheduler
+ * @author timberbackend
  *
  */
 public class Scheduler extends QuartzJobBean {
@@ -53,16 +53,16 @@ public class Scheduler extends QuartzJobBean {
 		schedulerLogEntity.setSchedulerId(schedulerEntity.getId());
 		schedulerLogEntity.setParams(schedulerEntity.getParams());
 		schedulerLogEntity.setBeanName(schedulerEntity.getBeanName());
-        long startTime = new Date().getTime();
+        long startTime = System.currentTimeMillis();
         try {
 			Object target = SpringContextUtils.getBean(schedulerEntity.getBeanName());
 			Method method = target.getClass().getDeclaredMethod("run", String.class);
 			method.invoke(target, schedulerEntity.getParams());
-			int times = Integer.parseInt(String.valueOf(new Date().getTime() - startTime));
+			int times = Integer.parseInt(String.valueOf(System.currentTimeMillis() - startTime));
 			schedulerLogEntity.setTimes(times);
 			schedulerLogEntity.setStatus(Constant.SUCCESS);
 		} catch (Exception e) {
-			int times = Integer.parseInt(String.valueOf(new Date().getTime() - startTime));
+			int times = Integer.parseInt(String.valueOf(System.currentTimeMillis() - startTime));
 			schedulerLogEntity.setTimes(times);
 			schedulerLogEntity.setStatus(Constant.FAIL);
 			schedulerLogEntity.setError(ExceptionUtils.catchErrorStackTrace(e));

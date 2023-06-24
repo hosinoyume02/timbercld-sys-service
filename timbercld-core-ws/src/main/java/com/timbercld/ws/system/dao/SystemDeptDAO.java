@@ -29,24 +29,36 @@ import java.util.Map;
 
 /**
  * 部门管理
- * 
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SystemDeptDAO extends BasicDao<SystemDeptEntity> {
 
+    /**
+     * list system department
+     * @param params
+     * @return list
+     */
     List<SystemDeptEntity> getList(Map<String, Object> params);
 
+    /**
+     * get system department
+     * @param id
+     * @return systemDeptEntity
+     */
     SystemDeptEntity getById(Long id);
 
     /**
-     * 获取所有部门的id、pid列表
+     * get system department id and pid
+     * @return list
      */
     List<SystemDeptEntity> getIdAndPidList();
 
     /**
-     * 根据部门ID，获取所有子部门ID列表
-     * @param id   部门ID
+     * according id get sub department id list
+     * @param id
+     * @return list
      */
     List<Long> getSubDeptIdList(String id);
 

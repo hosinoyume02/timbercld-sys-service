@@ -29,7 +29,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 角色
- * 
+ * @author timberbackend
  *
  */
 @Data

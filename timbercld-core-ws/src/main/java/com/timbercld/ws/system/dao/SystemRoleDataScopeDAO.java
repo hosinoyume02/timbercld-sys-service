@@ -29,25 +29,28 @@ import java.util.List;
 /**
  * 角色数据权限
  *
- *
- * @since 1.0.0
+ * @author timberbackend
  */
 @Mapper
 public interface SystemRoleDataScopeDAO extends BasicDao<SystemRoleDataScopeEntity> {
 
     /**
-     * 根据角色ID，获取部门ID列表
+     * get department id by role id
+     * @param roleId
+     * @return list
      */
     List<Long> getDeptIdList(Long roleId);
 
     /**
-     * 获取用户的部门数据权限列表
+     * get data scope list by user id
+     * @param userId
+     * @return list
      */
     List<Long> getDataScopeList(Long userId);
 
     /**
-     * 根据角色id，删除角色数据权限关系
-     * @param roleIds 角色ids
+     * delete role scope data by role ids
+     * @param roleIds
      */
     void deleteByRoleIds(Long[] roleIds);
 }

@@ -29,8 +29,8 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
- * 登录表单
- *
+ * 登录信息
+ * @author timberbackend
  *
  */
 @Data

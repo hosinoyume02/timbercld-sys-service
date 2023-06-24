@@ -24,12 +24,7 @@ import com.timbercld.core.dao.BasicDao;
 import com.timbercld.ws.demo.entity.ProductEntity;
 import org.apache.ibatis.annotations.Mapper;
 
-/**
- * 操作日志
- *
- *
- * @since 1.0.0
- */
+
 @Mapper
 public interface ProductDAO extends BasicDao<ProductEntity> {
 	

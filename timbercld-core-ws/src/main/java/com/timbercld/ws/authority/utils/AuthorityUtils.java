@@ -26,7 +26,7 @@ import org.apache.shiro.subject.Subject;
 
 /**
  * 用户
- *
+ * @author timberbackend
  *
  */
 public class AuthorityUtils {

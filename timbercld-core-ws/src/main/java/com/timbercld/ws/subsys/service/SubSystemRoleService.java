@@ -31,22 +31,43 @@ import java.util.Map;
 
 
 /**
- * 子系统角色
- * 
+ * subSystem role
+ * @author timberbackend
  * 
  */
 public interface SubSystemRoleService extends BasicService<SystemRoleEntity> {
-
+	/**
+	 * page list system role
+	 * @param params
+	 * @return PageData
+	 */
 	PageData<SystemRoleDTO> page(Map<String, Object> params);
-
+	/**
+	 * list system role
+	 * @param params
+	 * @return list
+	 */
 	List<SystemRoleDTO> list(Map<String, Object> params);
-
+	/**
+	 * get system role
+	 * @param id
+	 * @return systemRoleDTO
+	 */
 	SystemRoleDTO get(Long id);
-
+	/**
+	 * save system role
+	 * @param dto
+	 */
 	void save(SystemRoleDTO dto);
-
+	/**
+	 * update system role
+	 * @param dto
+	 */
 	void update(SystemRoleDTO dto);
-
+	/**
+	 * delete system role
+	 * @param ids
+	 */
 	void delete(Long[] ids);
 
 }

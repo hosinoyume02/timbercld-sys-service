@@ -30,7 +30,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 操作日志
+ * product demo
  *
  *
  * @since 1.0.0

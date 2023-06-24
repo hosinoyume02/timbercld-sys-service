@@ -30,22 +30,41 @@ import java.util.Map;
 
 /**
  * 系统用户
- * 
+ * @author timberbackend
  *
  */
 @Mapper
 public interface SystemUserDAO extends BasicDao<SystemUserEntity> {
-
+	/**
+	 * get system user list
+	 * @param params
+	 * @return list
+	 */
 	List<SystemUserEntity> getList(Map<String, Object> params);
-
+	/**
+	 * get system user by id
+	 * @param id
+	 * @return systemUserEntity
+	 */
 	SystemUserEntity getById(Long id);
-
+	/**
+	 * get system user by username
+	 * @param username
+	 * @return systemUserEntity
+	 */
 	SystemUserEntity getByUsername(String username);
-
+	/**
+	 * update password by user id
+	 * @param id
+	 * @param newPassword
+	 * @return int
+	 */
 	int updatePassword(@Param("id") Long id, @Param("newPassword") String newPassword);
 
 	/**
-	 * 根据部门ID，查询用户数
+	 * get user number by department id
+	 * @param deptId
+	 * @return int
 	 */
 	int getCountByDeptId(Long deptId);
 

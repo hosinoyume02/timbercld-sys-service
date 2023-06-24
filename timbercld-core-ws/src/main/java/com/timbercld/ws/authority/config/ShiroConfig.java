@@ -40,7 +40,7 @@ import java.util.Map;
 /**
  * Shiro的配置文件
  *
- *
+ * @author timberbackend
  */
 @Configuration
 public class ShiroConfig {
@@ -69,7 +69,7 @@ public class ShiroConfig {
         shiroFilter.setSecurityManager(securityManager);
 
         //oauth过滤
-        Map<String, Filter> filters = new HashMap<>();
+        Map<String, Filter> filters = new HashMap<>(1);
         filters.put("oauth", new OauthFilter());
         shiroFilter.setFilters(filters);
 

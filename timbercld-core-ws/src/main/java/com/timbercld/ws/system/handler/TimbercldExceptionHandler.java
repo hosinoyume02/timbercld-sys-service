@@ -44,9 +44,8 @@ import java.util.Map;
 
 /**
  * 异常处理器
+ * @author timberbackend
  *
- * 
- * @since 1.0.0
  */
 @RestControllerAdvice
 public class TimbercldExceptionHandler {

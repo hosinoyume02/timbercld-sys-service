@@ -29,7 +29,7 @@ import lombok.EqualsAndHashCode;
  * 角色菜单关系
  *
  * 
- * @since 1.0.0
+ * @author timberbackend
  */
 @Data
 @EqualsAndHashCode(callSuper=false)

@@ -22,7 +22,13 @@ package com.timbercld.ws.system.enums;
 
 
 public enum SuperSubSystemEnum {
+    /**
+     * 是
+     */
     YES(1),
+    /**
+     * 否
+     */
     NO(0);
 
     private int value;

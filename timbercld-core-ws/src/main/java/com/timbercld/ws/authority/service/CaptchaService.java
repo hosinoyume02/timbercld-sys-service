@@ -24,21 +24,23 @@ import java.awt.image.BufferedImage;
 
 /**
  * 验证码
- *
+ * @author timberbackend
  * 
  */
 public interface CaptchaService {
 
     /**
-     * 图片验证码
+     * create captcha image
+     * @param uuid
+     * @return bufferedImage
      */
     BufferedImage create(String uuid);
 
     /**
-     * 验证码效验
-     * @param uuid  uuid
-     * @param code  验证码
-     * @return  true：成功  false：失败
+     * validate captcha
+     * @param uuid
+     * @param code
+     * @return boolean
      */
     boolean validate(String uuid, String code);
 }

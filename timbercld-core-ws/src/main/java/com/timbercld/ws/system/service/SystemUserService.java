@@ -31,35 +31,62 @@ import java.util.Map;
 
 /**
  * 系统用户
- * 
+ * @author timberbackend
  * 
  */
 public interface SystemUserService extends BasicService<SystemUserEntity> {
-
+	/**
+	 * page list system user
+	 * @param params
+	 * @return pageData
+	 */
 	PageData<SystemUserDTO> page(Map<String, Object> params);
-
+	/**
+	 * list system user
+	 * @param params
+	 * @return list
+	 */
 	List<SystemUserDTO> list(Map<String, Object> params);
-
+	/**
+	 * get system user
+	 * @param id
+	 * @return systemUserDTO
+	 */
 	SystemUserDTO get(Long id);
-
+	/**
+	 * get system user
+	 * @param username
+	 * @return systemUserDTO
+	 */
 	SystemUserDTO getByUsername(String username);
-
+	/**
+	 * save system user
+	 * @param dto
+	 */
 	void save(SystemUserDTO dto);
 
-
+	/**
+	 * update system user
+	 * @param dto
+	 */
 	void update(SystemUserDTO dto);
-
+	/**
+	 * batch delete system user
+	 * @param ids
+	 */
 	void delete(Long[] ids);
 
 	/**
-	 * 修改密码
-	 * @param id           用户ID
-	 * @param newPassword  新密码
+	 * update password by user id
+	 * @param id
+	 * @param newPassword
 	 */
 	void updatePassword(Long id, String newPassword);
 
 	/**
-	 * 根据部门ID，查询用户数
+	 * get user number by department id
+	 * @param deptId
+	 * @return int
 	 */
 	int getCountByDeptId(Long deptId);
 }

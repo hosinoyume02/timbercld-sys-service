@@ -25,9 +25,8 @@ import lombok.Data;
 
 /**
  * 参数管理
+ * @author timberbackend
  *
- * 
- * @since 1.0.0
  */
 @Data
 public class SystemParamsExcel {

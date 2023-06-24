@@ -24,7 +24,7 @@ import java.lang.annotation.*;
 
 /**
  * 数据过滤注解
- *
+ * @author timberbackend
  * 
  */
 @Target(ElementType.METHOD)
@@ -32,22 +32,22 @@ import java.lang.annotation.*;
 @Documented
 public @interface DataFilter {
     /**
-     * 表的别名
+     * alias for table
      */
     String tableAlias() default "";
 
     /**
-     * 查询条件前缀，可选值有：[where、and]
+     * prefix for select
      */
     String prefix() default "";
 
     /**
-     * 用户ID
+     * user id
      */
-    String userId() default "creator";
+    String userId() default "creatorId";
 
     /**
-     * 部门ID
+     * department id
      */
     String deptId() default "dept_id";
 

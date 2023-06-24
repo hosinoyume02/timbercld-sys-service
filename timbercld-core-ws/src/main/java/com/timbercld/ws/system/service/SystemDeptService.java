@@ -29,24 +29,42 @@ import java.util.Map;
 
 /**
  * 部门管理
- * 
+ * @author timberbackend
  * 
  */
 public interface SystemDeptService extends BasicService<SystemDeptEntity> {
-
+	/**
+	 * get system department list
+	 * @param params
+	 * @return list
+	 */
 	List<SystemDeptDTO> list(Map<String, Object> params);
-
+	/**
+	 * get system department
+	 * @param id
+	 * @return systemDeptDTO
+	 */
 	SystemDeptDTO get(Long id);
-
+	/**
+	 * save system department
+	 * @param dto
+	 */
 	void save(SystemDeptDTO dto);
-
+	/**
+	 * update system department
+	 * @param dto
+	 */
 	void update(SystemDeptDTO dto);
-
+	/**
+	 * delete system department
+	 * @param id
+	 */
 	void delete(Long id);
 
 	/**
-	 * 根据部门ID，获取本部门及子部门ID列表
-	 * @param id   部门ID
+	 * get sub department id by department id
+	 * @param id
+	 * @return list
 	 */
 	List<Long> getSubDeptIdList(Long id);
 }

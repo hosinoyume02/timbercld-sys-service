@@ -27,17 +27,26 @@ import com.timbercld.ws.demo.entity.ProductEntity;
 
 import java.util.Map;
 
-/**
- * 操作日志
- *
- * 
- * @since 1.0.0
- */
+
 public interface ProductService extends BasicService<ProductEntity> {
-
+    /**
+     * fetch page data by params
+     *
+     * @param params search criteria
+     * @return PageData<ProductDTO>
+     */
     PageData<ProductDTO> page(Map<String, Object> params);
-
+    /**
+     * fetch dto by id
+     *
+     * @param id id
+     * @return ProductDTO
+     */
     ProductDTO get(Long id);
-
+    /**
+     * save entity by dto
+     *
+     * @param dto productDTO
+     */
     void save(ProductDTO dto);
 }

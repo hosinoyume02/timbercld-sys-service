@@ -36,8 +36,8 @@ import java.util.List;
 
 
 /**
- * 子系统管理
- *
+ * subSystemDTO
+ * @author timberbackend
  *
  */
 @Data

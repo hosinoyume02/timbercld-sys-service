@@ -32,7 +32,7 @@ import java.util.Date;
 
 /**
  * 异常日志
- *
+ * @author timberbackend
  *
  * @since 1.0.0
  */

@@ -28,33 +28,33 @@ import org.quartz.Scheduler;
 import org.quartz.*;
 
 /**
- * 定时任务工具类
- *
+ * util for scheduler
+ * @author timberbackend
  *
  */
 public class ScheduleUtils {
     private final static String PREFIX_JOB_NAME = "TIMBERCLD_TASK_";
     /**
-     * 任务调度参数key
+     * job key
      */
     public static final String JOB_PARAM_KEY = "JOB_PARAM_KEY";
     
     /**
-     * 获取触发器key
+     *  get trigger key
      */
     public static TriggerKey getTriggerKey(Long schedulerId) {
         return TriggerKey.triggerKey(PREFIX_JOB_NAME + schedulerId);
     }
     
     /**
-     * 获取jobKey
+     * get job Key
      */
     public static JobKey getJobKey(Long schedulerId) {
         return JobKey.jobKey(PREFIX_JOB_NAME + schedulerId);
     }
 
     /**
-     * 获取表达式触发器
+     * get crontab for trigger
      */
     public static CronTrigger getCronTrigger(Scheduler scheduler, Long schedulerId) {
         try {
@@ -65,7 +65,7 @@ public class ScheduleUtils {
     }
 
     /**
-     * 创建定时任务
+     * create scheduler
      */
     public static void createScheduler(Scheduler scheduler, SchedulerEntity schedulerEntity) {
         try {
@@ -84,7 +84,7 @@ public class ScheduleUtils {
     }
     
     /**
-     * 更新定时任务
+     * update scheduler
      */
     public static void updateScheduler(Scheduler scheduler, SchedulerEntity schedulerEntity) {
         try {
@@ -112,7 +112,7 @@ public class ScheduleUtils {
     }
 
     /**
-     * 立即执行任务
+     * run scheduler
      */
     public static void run(Scheduler scheduler, SchedulerEntity schedulerEntity) {
         try {
@@ -127,7 +127,7 @@ public class ScheduleUtils {
     }
 
     /**
-     * 暂停任务
+     * pause scheduler
      */
     public static void pauseJob(Scheduler scheduler, Long schedulerId) {
         try {
@@ -138,7 +138,7 @@ public class ScheduleUtils {
     }
 
     /**
-     * 恢复任务
+     * resume scheduler
      */
     public static void resumeJob(Scheduler scheduler, Long schedulerId) {
         try {
@@ -149,7 +149,7 @@ public class ScheduleUtils {
     }
 
     /**
-     * 删除定时任务
+     * delete scheduler
      */
     public static void deleteScheduler(Scheduler scheduler, Long schedulerId) {
         try {

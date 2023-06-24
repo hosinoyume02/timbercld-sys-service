@@ -31,7 +31,7 @@ import java.math.BigDecimal;
  * 系统数据
  *
  *
- * @since 1.0.0
+ * @author timberbackend
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
