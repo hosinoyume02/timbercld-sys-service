@@ -3,9 +3,9 @@ spring:
     druid:
       # MariaDB (MySQL)
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/timbercld_sys_service?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://localhost:3306/timbercld-sys-service?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: 123456
+      password: 20020904
       initial-size: 10
       max-active: 100
       min-idle: 10
